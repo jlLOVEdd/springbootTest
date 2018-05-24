@@ -5,19 +5,25 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author: weidongdong
  * @Description:
  * @Date: Created in 10:08 2018/5/17
  */
-@Controller
-@EnableAutoConfiguration
+@RestController
 public class SimpleController {
-    @RequestMapping("/")
+    @RequestMapping("/helloworld")
     @ResponseBody
     String home() {
         return "Hello World!";
+    }
+
+    @RequestMapping("/helloworld2")
+    @ResponseBody
+    String home2() {
+        return "Hello World22SSS!";
     }
 
     public static void main(String[] args) throws Exception {
