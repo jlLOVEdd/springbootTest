@@ -1,10 +1,7 @@
 package com.test.wdd.controller;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,15 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SimpleController {
     @RequestMapping("/helloworld")
-    @ResponseBody
     String home() {
         return "Hello World!";
     }
 
     @RequestMapping("/helloworld2")
-    @ResponseBody
     String home2() {
-        return "Hello World22SSS!";
+        return "Hello World22SSS!"+"ssss"+"sssss";
     }
 
     public static void main(String[] args) throws Exception {
