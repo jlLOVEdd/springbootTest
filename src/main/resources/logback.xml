@@ -6,6 +6,10 @@
     <property name="TEST_FILE_PATH" value="d:/test.log" />
     <!-- pro文件路径 -->
     <property name="PRO_FILE_PATH" value="/opt/test/log" />
+    <!-- 定义日志文件 输入位置 -->
+    <property name="log_dir" value="${catalina.home:-./}/logs"/>
+    <!-- 日志最大的历史 30天 -->
+    <property name="maxHistory" value="30"/>
 
     <!-- 开发环境 -->
     <springProfile name="dev">
