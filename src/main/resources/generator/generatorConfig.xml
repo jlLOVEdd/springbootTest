@@ -3,10 +3,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 
 <generatorConfiguration>
-
-    <properties resource="jdbc.properties"></properties>
-
-    <context id="webAppTest" targetRuntime="MyBatis3">
+    <properties resource="application.properties"/>
+    <context id="springbootTest" targetRuntime="MyBatis3">
 
         <!--是否生成注释-->
         <commentGenerator>
@@ -14,33 +12,32 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
-        <jdbcConnection driverClass="${jdbc.driver}"
-                        connectionURL="${jdbc.url}"
-                        userId="${jdbc.username}"
-                        password="${jdbc.password}">
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="true" />
         </javaTypeResolver>
-        <javaModelGenerator targetPackage="com.wdd.test.bean" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.test.wdd.domain.entry" targetProject="src/main/java">
 
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
 
-        <sqlMapGenerator targetPackage="mybatis.mapper"
+        <sqlMapGenerator targetPackage="mapper"
                          targetProject="src/main/resources" >
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
 
-        <javaClientGenerator targetPackage="com.test.wdd.domain"
+        <javaClientGenerator targetPackage="com.test.wdd.domain.dao"
                              targetProject="src/main/java" type="XMLMAPPER" >
 
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
-        <!--
         <table tableName="f_sysuserinfo" domainObjectName="Sysuserinfo">
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
         </table>
@@ -79,7 +76,7 @@
 
         <table tableName="f_user_role" domainObjectName="UserRole">
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
-        </table>-->
+        </table>
         <table tableName="t_goods" domainObjectName="Goods">
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
         </table>

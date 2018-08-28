@@ -2,14 +2,9 @@ server:
   port: 8080
 
 spring:
-    datasource:
-        name: test
-        type: com.alibaba.druid.pool.DruidDataSource
-        druid:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://106.14.178.69:3306/test?useSSL=FALSE&serverTimezone=UTC
-          username: admin
-          password: Wdd842655.
+    profiles:
+      active: test
+
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.example.spring_boot.bean

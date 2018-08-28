@@ -1,6 +1,6 @@
 package com.test.wdd.controller;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class SimpleController {
+    private int i = 0;
+    private static int j = 0;
+
     @RequestMapping("/helloworld")
     String home() {
+        System.out.println(j++ + "|" + i++);
         return "Hello World!";
     }
 
     @RequestMapping("/helloworld2")
     String home2() {
-        return "Hello World22SSS!"+"ssss"+"sssss";
-    }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SimpleController.class, args);
+        return "Hello World22SSS!" + "ssss" + "sssss";
     }
 }
