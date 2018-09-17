@@ -7,4 +7,11 @@ package com.test.wdd.testDemo;
  */
 public class SynTest {
 
+    @Deprecated
+    String timeOut;
+
+    public  void getTime(){
+        System.out.println(this.timeOut);
+    }
+
 }
